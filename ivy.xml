@@ -1,0 +1,87 @@
+<ivy-module version="2.0">
+
+  <info organisation="com.zotoh" module="bedrock"/>
+
+  <configurations defaultconf="libjar">
+    <conf name="libjar"  description="the core jar library"/>
+    <conf name="thirdparty"  description="3rd party libs"/>
+    <conf name="test" extends="libjar,thirdparty" visibility="private" description="internal testing"/>
+  </configurations>
+
+  <publications>
+    <artifact name="bedrock-distro" type="distro"  conf="libjar" ext="tar.gz"/>
+    <artifact name="bedrock" type="jar"  conf="libjar" ext="jar"/>
+  </publications>
+
+  <dependencies defaultconf="libjar">
+    <dependency org="org.jboss.netty" name="netty" rev="3.5.9.Final" conf="libjar->default"/>
+    <dependency org="log4j" name="log4j" rev="1.2.17" conf="libjar->default"/>
+    <dependency org="bouncycastle" name="bcprov-jdk15on" rev="147" conf="libjar->default"/>
+    <dependency org="bouncycastle" name="bcmail-jdk15on" rev="147" conf="libjar->default"/>
+    <dependency org="bouncycastle" name="bcpkix-jdk15on" rev="147" conf="libjar->default"/>
+    <dependency org="org.slf4j" name="slf4j-api" rev="1.7.2" conf="libjar->default"/>
+    <dependency org="org.slf4j" name="slf4j-log4j12" rev="1.7.2" conf="libjar->default"/>
+    <dependency org="org.apache.commons" name="commons-lang3" rev="3.1" conf="libjar->default"/>
+    <dependency org="commons-io" name="commons-io" rev="2.4" conf="libjar->default"/>
+    <dependency org="commons-collections" name="commons-collections" rev="3.2.1" conf="libjar->default"/>
+    <dependency org="commons-logging" name="commons-logging" rev="1.1.1" conf="libjar->default"/>
+    <dependency org="commons-email" name="commons-email" rev="1.2" conf="libjar->default"/>
+    <dependency org="commons-codec" name="commons-codec" rev="1.7" conf="libjar->default"/>
+    <dependency org="commons-fileupload" name="commons-fileupload" rev="1.2.2" conf="libjar->default"/>
+    <dependency org="commons-pool" name="commons-pool" rev="1.6" conf="libjar->default"/>
+    <dependency org="commons-dbcp" name="commons-dbcp" rev="1.4" conf="libjar->default"/>
+    <dependency org="com.sun.mail" name="javamail" rev="1.4.5" conf="libjar->default"/>
+
+    <dependency org="org.dasein" name="dasein-cloud-core" rev="2012.04.1" conf="libjar->default"/>
+    <dependency org="org.dasein" name="dasein-util" rev="2012.02" conf="libjar->default"/>
+    <dependency org="com.amazonaws" name="aws-java-sdk" rev="1.3.22"  conf="thirdparty->default">
+      <exclude org="org.apache.httpcomponents" />
+      <exclude org="commons-logging" />
+      <exclude org="commons-codec" />
+      <exclude org="javax.activation" />
+      <exclude org="javax.mail" />
+    </dependency>
+
+    <dependency org="org.h2" name="h2" rev="1.3.169" conf="libjar->default"/>
+    <dependency org="javax" name="geronimo-jms_1.1_spec" rev="1.1.1" conf="thirdparty->default"/>
+<!--
+    <dependency org="junit" name="junit" rev="4.10"  conf="thirdparty->default"/>
+-->
+    <dependency org="org.apache.httpcomponents" name="httpcore-nio" rev="4.2.2" conf="libjar->default"/>
+    <dependency org="org.apache.httpcomponents" name="httpcore" rev="4.2.2" conf="libjar->default"/>
+    <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.2.2" conf="libjar->default"/>
+
+    <dependency org="org.apache.ant" name="ant" rev="1.8.4"  conf="thirdparty->default"/>
+    <dependency org="org.apache.ant" name="ant-launcher" rev="1.8.4"  conf="thirdparty->default"/>
+    <dependency org="org.apache.ant" name="ant-junit4" rev="1.8.4"  conf="thirdparty->default"/>
+    <dependency org="org.apache.ant" name="ant-junit" rev="1.8.4"  conf="thirdparty->default"/>
+    <dependency org="org.codehaus.groovy" name="groovy-all" rev="2.0.5"  conf="thirdparty->default"/>
+    <dependency org="org.scala-lang" name="scala-library" rev="2.9.2"  conf="thirdparty->default"/>
+    <dependency org="org.scala-lang" name="scala-compiler" rev="2.9.2"  conf="thirdparty->default"/>
+    <dependency org="com.sun.tools" name="tools" rev="1.7.0"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty.orbit" name="javax.servlet" rev="3.0.0.v201112011016"  conf="thirdparty->default">
+    <artifact name="javax.servlet" type="orbit" ext="jar"/>
+    </dependency>
+    <dependency org="org.eclipse.jetty" name="jetty-xml" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-server" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-continuation" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-websocket" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-servlet" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-server" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-util" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-security" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="org.eclipse.jetty" name="jetty-webapp" rev="8.1.7.v20120910"  conf="thirdparty->default"/>
+    <dependency org="jdom" name="jdom" rev="1.1.3"  conf="thirdparty->default"/>
+    <dependency org="org.scalatest" name="scalatest" rev="1.8"  conf="thirdparty->default"/>
+    <dependency org="net.java.dev.rome" name="rome" rev="1.0.0"  conf="thirdparty->default"/>
+    <dependency org="ganymed" name="ganymed-ssh2" rev="build251beta1"  conf="thirdparty->default"/>
+        <!--
+    <dependency org="org.apache.wink" name="wink-server" rev="1.1.3-incubating"  conf="thirdparty->default"/>
+    <dependency org="org.apache.wink" name="wink-client" rev="1.1.3-incubating"  conf="thirdparty->default"/>
+    <dependency org="org.apache.abdera" name="abdera-client" rev="1.1.2"  conf="thirdparty->default"/>
+    <dependency org="org.jclouds" name="jclouds-allcompute" rev="1.0.0"  conf="thirdparty->default"/>
+    <dependency org="org.jclouds" name="jclouds-allblobstore" rev="1.0.0"  conf="thirdparty->default"/>
+        -->
+    </dependencies>
+
+</ivy-module>
