@@ -51,6 +51,9 @@
     <dependency org="org.apache.httpcomponents" name="httpcore" rev="4.2.2" conf="libjar->default"/>
     <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.2.2" conf="libjar->default"/>
 
+    <dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.1.1" conf="libjar->default"/>
+    <dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.1.1" conf="libjar->default"/>
+
     <dependency org="org.apache.ant" name="ant" rev="1.8.4"  conf="thirdparty->default"/>
     <dependency org="org.apache.ant" name="ant-launcher" rev="1.8.4"  conf="thirdparty->default"/>
     <dependency org="org.apache.ant" name="ant-junit4" rev="1.8.4"  conf="thirdparty->default"/>

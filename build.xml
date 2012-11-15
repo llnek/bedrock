@@ -5,7 +5,7 @@
   <property name="DEBUG"     value="true"/>
   <property name="revision" value="1.1.0" />
 
-  <include file="${basedir}/../common.xml"/>
+  <include file="${basedir}/common.xml"/>
 
     <!-- paths used for compilation and run  -->
   <path id="compile.path.id">
