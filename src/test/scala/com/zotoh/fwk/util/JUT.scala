@@ -412,11 +412,12 @@ class FwkUtilJUT  extends FunSuite with BeforeAndAfterEach with BeforeAndAfterAl
   }
 
   test("testFileUrl") {
-    val s=asFileUrl(new File("/tmp/abc.txt"))
+    val p=new File("/tmp/abc.txt").getCanonicalPath()
+    val s=asFileUrl(new File(p))
     if (isWindows())
-      expect(s)( "file://tmp/abc.txt")
+      expect(s)( "file:/"+p)
     else
-      expect(s)( "file:/tmp/abc.txt")
+      expect(s)( "file:" + p)
   }
 
 
